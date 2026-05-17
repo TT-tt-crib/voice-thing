@@ -21,8 +21,7 @@ Then visit `http://localhost:4173`.
 
 ## Feedback inbox and form setup
 
-Create a real inbox first, for example `voicething.feedback@gmail.com` or
-`hello@yourdomain.com`.
+The feedback inbox is `voicethingteam@gmail.com`.
 
 For a static GitHub Pages site, the easiest working form options are:
 
@@ -34,8 +33,8 @@ Example `config.js`:
 
 ```js
 window.VOICE_THING_CONFIG = {
-  feedbackEmail: "hello@yourdomain.com",
-  formEndpoint: "https://formsubmit.co/ajax/hello@yourdomain.com"
+  feedbackEmail: "voicethingteam@gmail.com",
+  formEndpoint: "https://formsubmit.co/ajax/voicethingteam@gmail.com"
 };
 ```
 

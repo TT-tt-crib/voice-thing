@@ -1,4 +1,4 @@
 window.VOICE_THING_CONFIG = {
-  feedbackEmail: "hello@voicething.example",
-  formEndpoint: ""
+  feedbackEmail: "voicethingteam@gmail.com",
+  formEndpoint: "https://formsubmit.co/ajax/voicethingteam@gmail.com"
 };
