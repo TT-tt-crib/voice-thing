@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VoiceThing | Identity monitoring for your voice</title>
+    <meta
+      name="description"
+      content="VoiceThing helps creators, podcasters, and public voices detect possible misuse of their voice online."
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#top" aria-label="VoiceThing home">
+        <span class="brand-mark">V</span>
+        <span>VoiceThing</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#how">How it works</a>
+        <a href="#trust">Trust</a>
+        <a href="#feedback">Feedback</a>
+      </nav>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Voice identity monitoring</p>
+          <h1>Know when your voice is being used without permission.</h1>
+          <p class="hero-lede">
+            VoiceThing is an early concept for creators, podcasters, streamers,
+            journalists, and public-facing teams who want alerts when their real
+            voice or an AI clone may appear online.
+          </p>
+          <form class="signup-form" action="mailto:hello@voicething.example" method="post" enctype="text/plain">
+            <label for="email">Join the private feedback list</label>
+            <div class="form-row">
+              <input id="email" name="email" type="email" placeholder="you@example.com" required>
+              <button type="submit">Request Access</button>
+            </div>
+            <p class="form-note">
+              No product launch yet. We are collecting feedback on the problem,
+              trust model, and first scanning targets.
+            </p>
+          </form>
+        </div>
+        <div class="signal-panel" aria-label="Example monitoring result">
+          <div class="meter">
+            <span class="meter-label">Possible match</span>
+            <span class="meter-value">87%</span>
+          </div>
+          <div class="waveform" aria-hidden="true">
+            <span style="height: 34%"></span>
+            <span style="height: 68%"></span>
+            <span style="height: 46%"></span>
+            <span style="height: 82%"></span>
+            <span style="height: 52%"></span>
+            <span style="height: 76%"></span>
+            <span style="height: 39%"></span>
+            <span style="height: 91%"></span>
+            <span style="height: 56%"></span>
+            <span style="height: 72%"></span>
+            <span style="height: 44%"></span>
+            <span style="height: 63%"></span>
+          </div>
+          <div class="result-list">
+            <div>
+              <span>Source</span>
+              <strong>Public video platform</strong>
+            </div>
+            <div>
+              <span>Evidence</span>
+              <strong>Timestamped audio segment</strong>
+            </div>
+            <div>
+              <span>Next step</span>
+              <strong>Review, dismiss, or export report</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="audience-strip" aria-label="Who VoiceThing is for">
+        <span>Podcasters</span>
+        <span>Voice actors</span>
+        <span>YouTubers</span>
+        <span>Streamers</span>
+        <span>Journalists</span>
+        <span>Founder teams</span>
+      </section>
+
+      <section id="how" class="section two-column">
+        <div>
+          <p class="eyebrow">How it works</p>
+          <h2>Start narrow, prove the signal, then expand.</h2>
+        </div>
+        <div class="steps">
+          <article>
+            <span>01</span>
+            <h3>Verify your voice</h3>
+            <p>
+              Add a small set of approved voice samples so the system has a
+              consented baseline for comparison.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3>Monitor public audio</h3>
+            <p>
+              Begin with high-signal sources like public videos, podcasts, and
+              creator platforms instead of claiming to scan everything.
+            </p>
+          </article>
+          <article>
+            <span>03</span>
+            <h3>Review suspicious matches</h3>
+            <p>
+              See the source, timestamp, confidence level, and context before
+              deciding whether it is misuse, parody, licensed use, or noise.
+            </p>
+          </article>
+          <article>
+            <span>04</span>
+            <h3>Prepare evidence</h3>
+            <p>
+              Export a clean report for takedown requests, platform appeals,
+              managers, agencies, or legal review.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section id="trust" class="section trust-section">
+        <div class="section-heading">
+          <p class="eyebrow">Trust model</p>
+          <h2>The product only works if people trust it with their voice.</h2>
+        </div>
+        <div class="trust-grid">
+          <article>
+            <h3>Consent-first samples</h3>
+            <p>Voice references should be explicitly uploaded, labeled, and removable by the owner.</p>
+          </article>
+          <article>
+            <h3>Privacy by default</h3>
+            <p>Short retention windows, encryption, and clear deletion controls need to be core features.</p>
+          </article>
+          <article>
+            <h3>Human review</h3>
+            <p>Matches should be treated as leads, not accusations. False positives are part of the workflow.</p>
+          </article>
+          <article>
+            <h3>Useful outcomes</h3>
+            <p>Detection should lead to reports, takedown templates, and clean evidence collection.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="feedback" class="section feedback-section">
+        <div>
+          <p class="eyebrow">We are validating</p>
+          <h2>Help shape the first version.</h2>
+          <p>
+            We are looking for blunt feedback from people whose voice already
+            exists online, and from privacy-minded people who would never upload
+            a voice sample unless the protections were clear.
+          </p>
+        </div>
+        <div class="question-list">
+          <p>Would you trust a tool like this?</p>
+          <p>Which platforms should it monitor first?</p>
+          <p>What would make a match feel actionable?</p>
+          <p>Would you pay for monitoring, takedown help, or both?</p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <span>VoiceThing</span>
+      <a href="mailto:hello@voicething.example">hello@voicething.example</a>
+    </footer>
+  </body>
+</html>
