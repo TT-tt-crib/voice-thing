@@ -40,14 +40,13 @@ window.VOICE_THING_CONFIG = {
 
 ## GitHub Pages
 
-This repo includes a GitHub Pages workflow at
-`.github/workflows/deploy-pages.yml`.
-
 In GitHub, open the repo settings and set:
 
-- Settings -> Pages -> Build and deployment -> Source: `GitHub Actions`
+- Settings -> Pages -> Build and deployment -> Source: `Deploy from a branch`
+- Branch: `gh-pages`
+- Folder: `/ (root)`
 
-After the next push to `main`, the site should publish at:
+After saving, the site should publish at:
 
 ```text
 https://taerim-codes.github.io/voice-thing/
