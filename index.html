@@ -9,6 +9,8 @@
       content="VoiceThing helps creators, podcasters, and public voices detect possible misuse of their voice online."
     >
     <link rel="stylesheet" href="styles.css">
+    <script src="config.js" defer></script>
+    <script src="script.js" defer></script>
   </head>
   <body>
     <header class="site-header">
@@ -33,16 +35,36 @@
             journalists, and public-facing teams who want alerts when their real
             voice or an AI clone may appear online.
           </p>
-          <form class="signup-form" action="mailto:hello@voicething.example" method="post" enctype="text/plain">
+          <form class="signup-form" id="waitlist-form">
             <label for="email">Join the private feedback list</label>
             <div class="form-row">
               <input id="email" name="email" type="email" placeholder="you@example.com" required>
               <button type="submit">Request Access</button>
             </div>
+            <label class="sr-only" for="role">What best describes you?</label>
+            <select id="role" name="role">
+              <option value="">I am a...</option>
+              <option>Podcaster</option>
+              <option>Voice actor</option>
+              <option>YouTuber or streamer</option>
+              <option>Musician</option>
+              <option>Journalist</option>
+              <option>Founder or executive</option>
+              <option>Privacy/security researcher</option>
+              <option>Other</option>
+            </select>
+            <label class="sr-only" for="feedback-note">What should we know?</label>
+            <textarea
+              id="feedback-note"
+              name="message"
+              rows="3"
+              placeholder="Optional: what would make this useful or trustworthy?"
+            ></textarea>
             <p class="form-note">
               No product launch yet. We are collecting feedback on the problem,
               trust model, and first scanning targets.
             </p>
+            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
           </form>
         </div>
         <div class="signal-panel" aria-label="Example monitoring result">
@@ -177,7 +199,7 @@
 
     <footer class="site-footer">
       <span>VoiceThing</span>
-      <a href="mailto:hello@voicething.example">hello@voicething.example</a>
+      <a data-feedback-email href="mailto:hello@voicething.example">hello@voicething.example</a>
     </footer>
   </body>
 </html>
