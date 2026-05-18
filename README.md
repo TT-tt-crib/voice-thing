@@ -15,30 +15,24 @@ Then visit `http://localhost:4173`.
 ## Notes
 
 - The waitlist form reads from `config.js`.
-- Replace `hello@voicething.example` with the real feedback inbox before sharing.
-- Add a real Tally share URL in `config.js` to collect submissions without opening email.
+- Add a real form endpoint in `config.js` to collect submissions without opening email.
 - This is intentionally dependency-free so it can be deployed on GitHub Pages, Netlify, Vercel, or any static host.
 
 ## Feedback inbox and form setup
 
 The feedback inbox is `voicethingteam@gmail.com`.
 
-Create a Tally form with fields for:
-
-- Email
-- Role
-- Message
-
-Then paste the public Tally share URL into `tallyFormUrl`. The landing page
-opens Tally with the visitor's email, role, message, and source page as URL
-parameters. If no Tally URL is configured, it falls back to a prefilled email.
+For one-field, in-place waitlist signup, use a form backend such as Web3Forms
+or Formspree. If no endpoint is configured, the form falls back to a prefilled
+email draft.
 
 Example `config.js`:
 
 ```js
 window.VOICE_THING_CONFIG = {
   feedbackEmail: "voicethingteam@gmail.com",
-  tallyFormUrl: "https://tally.so/r/YOUR_FORM_ID"
+  formEndpoint: "https://api.web3forms.com/submit",
+  formAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY"
 };
 ```
 
