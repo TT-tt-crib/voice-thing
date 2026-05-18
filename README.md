@@ -1,51 +1,81 @@
 # VoiceThing
 
-A lightweight landing page for validating an early product idea: identity monitoring for your voice.
+VoiceThing is a lightweight landing page for validating an early product idea:
+identity monitoring for your voice.
 
-## Preview locally
+Live site:
 
-Open `index.html` in a browser, or run a tiny static server:
+```text
+https://voice-thing.vercel.app
+```
+
+## What It Does
+
+- Explains the VoiceThing concept.
+- Collects waitlist emails with a one-field signup form.
+- Sends signups to `voicethingteam@gmail.com` through Web3Forms.
+- Falls back to a prefilled email draft if the form backend is unavailable.
+
+## Project Structure
+
+```text
+index.html       Main landing page markup
+styles.css       Responsive page styling
+script.js        Waitlist form behavior
+config.js        Feedback inbox and form backend config
+LAUNCH_POSTS.md  Draft posts for Reddit, X, and founder communities
+```
+
+## Run Locally
+
+Start a static server:
 
 ```sh
 python3 -m http.server 4173
 ```
 
-Then visit `http://localhost:4173`.
+Then open:
 
-## Notes
+```text
+http://localhost:4173
+```
 
-- The waitlist form reads from `config.js`.
-- Add a real form endpoint in `config.js` to collect submissions without opening email.
-- This is intentionally dependency-free so it can be deployed on GitHub Pages, Netlify, Vercel, or any static host.
+## Waitlist Form
 
-## Feedback inbox and form setup
-
-The feedback inbox is `voicethingteam@gmail.com`.
-
-For one-field, in-place waitlist signup, use a form backend such as Web3Forms
-or Formspree. If no endpoint is configured, the form falls back to a prefilled
-email draft.
-
-Example `config.js`:
+The waitlist form is configured in `config.js`:
 
 ```js
 window.VOICE_THING_CONFIG = {
   feedbackEmail: "voicethingteam@gmail.com",
   formEndpoint: "https://api.web3forms.com/submit",
-  formAccessKey: "YOUR_WEB3FORMS_ACCESS_KEY"
+  formAccessKey: "WEB3FORMS_ACCESS_KEY"
 };
 ```
 
-## GitHub Pages
+The current user flow is:
 
-In GitHub, open the repo settings and set:
+1. Visitor enters email.
+2. Visitor clicks `Request Access`.
+3. The page submits to Web3Forms without redirecting.
+4. The visitor sees `Thanks. You are on the list.`
 
-- Settings -> Pages -> Build and deployment -> Source: `Deploy from a branch`
-- Branch: `gh-pages`
-- Folder: `/ (root)`
+## Deploy
 
-After saving, the site should publish at:
+The site is deployed on Vercel from the GitHub repo.
+
+For this static site, Vercel should use:
 
 ```text
-https://taerim-codes.github.io/voice-thing/
+Framework Preset: Other
+Build Command: empty
+Output Directory: .
+Install Command: empty
 ```
+
+Pushing to `main` triggers a Vercel redeploy.
+
+## Notes
+
+- There is no build step and no package manager dependency.
+- Do not commit private credentials beyond public client-side form keys.
+- If the form backend changes, update `config.js` and test locally before pushing.
