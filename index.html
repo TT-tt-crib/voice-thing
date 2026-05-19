@@ -3,231 +3,67 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>VoiceThing — Voice identity monitoring</title>
-    <meta name="description" content="Find AI clones of your voice — before your audience does. Daily sweeps of public video, podcast, and creator platforms.">
+    <title>VoiceThing</title>
+    <meta name="description" content="Know when your voice is used without permission. Join the VoiceThing waitlist.">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="VoiceThing — Voice identity monitoring">
-    <meta property="og:description" content="Find AI clones of your voice — before your audience does. Daily sweeps of public video, podcast, and creator platforms.">
+    <meta property="og:title" content="VoiceThing">
+    <meta property="og:description" content="Know when your voice is used without permission.">
     <meta property="og:url" content="https://voice-thing.vercel.app">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="VoiceThing — Voice identity monitoring">
-    <meta name="twitter:description" content="Find AI clones of your voice — before your audience does.">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;1,9..144,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="VoiceThing">
+    <meta name="twitter:description" content="Know when your voice is used without permission.">
     <link rel="stylesheet" href="styles.css">
     <script src="config.js" defer></script>
     <script src="script.js" defer></script>
     <script defer src="/_vercel/insights/script.js"></script>
   </head>
   <body>
-    <div class="frame">
+    <div class="signal-backdrop" aria-hidden="true">
+      <span style="--i: 0"></span>
+      <span style="--i: 1"></span>
+      <span style="--i: 2"></span>
+      <span style="--i: 3"></span>
+      <span style="--i: 4"></span>
+      <span style="--i: 5"></span>
+      <span style="--i: 6"></span>
+      <span style="--i: 7"></span>
+      <span style="--i: 8"></span>
+      <span style="--i: 9"></span>
+      <span style="--i: 10"></span>
+      <span style="--i: 11"></span>
+      <span style="--i: 12"></span>
+      <span style="--i: 13"></span>
+      <span style="--i: 14"></span>
+      <span style="--i: 15"></span>
+    </div>
+    <main class="page-shell" aria-labelledby="page-title">
       <header class="site-header">
-        <a class="brand" href="#top" aria-label="VoiceThing home">
+        <a class="brand" href="/" aria-label="VoiceThing home">
           <span class="brand-mark">V</span>
-          <span class="brand-name">VoiceThing</span>
+          <span>VoiceThing</span>
         </a>
-        <nav class="nav-links" aria-label="Primary">
-          <a href="#method">Method</a>
-          <a href="#trust">Trust</a>
-          <a href="#why-now">Why now</a>
-          <a href="#waitlist-form" class="nav-cta">Join waitlist</a>
-        </nav>
       </header>
 
-      <main id="top">
-        <section class="hero">
-          <div class="lead">
-            <p class="eyebrow">Dispatch · Voice cloning</p>
-            <h1>
-              Find AI clones<br>
-              of <em>your</em> voice —<br>
-              before your<br>
-              <span class="strike">audience</span> does.
-            </h1>
-            <p class="dek">
-              Daily sweeps of public video, podcast, and creator platforms.
-              An alert lands in your inbox the moment a likely match appears.
-            </p>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="eyebrow">Identity monitoring for your voice</p>
+          <h1 id="page-title">Know when your voice is used without permission.</h1>
+        </div>
 
-            <form class="signup" id="waitlist-form">
-              <label class="signup-label" for="email">Join the private waitlist · Cohort 01</label>
-              <div class="signup-row">
-                <input id="email" name="email" type="email" placeholder="name@yourdomain.com" required>
-                <button type="submit">Join waitlist</button>
-              </div>
-              <label class="signup-secondary" for="context">
-                Where have you seen your voice used? <span class="optional">— optional, one sentence is plenty</span>
-              </label>
-              <textarea id="context" name="context" rows="2" placeholder="e.g. a fan account ran a fake interview using my voice"></textarea>
-              <p class="signup-note">Talking with the first 40 voices before we launch private beta. Cohort 01 closes at 50.</p>
-              <p class="form-status" data-form-status role="status" aria-live="polite"></p>
-            </form>
+        <div class="waitlist-card">
+          <div class="card-orbit" aria-hidden="true"></div>
+          <p class="card-kicker">Private beta</p>
+          <p class="subtitle">Join the waitlist.</p>
+          <form class="signup" id="waitlist-form">
+          <label class="sr-only" for="email">Email address</label>
+          <div class="signup-row">
+            <input id="email" name="email" type="email" placeholder="you@example.com" autocomplete="email" required>
+            <button type="submit">Request access</button>
           </div>
-
-          <aside class="evidence" aria-label="Example alert">
-            <div class="evidence-header">
-              <span class="evidence-status">
-                <span class="status-dot"></span>
-                Match detected
-              </span>
-              <span class="evidence-time">Example alert</span>
-            </div>
-            <div class="evidence-body">
-              <div class="evidence-percent-row">
-                <span class="evidence-percent-label">Probable match</span>
-                <span class="evidence-percent">87<span class="pct">%</span></span>
-              </div>
-              <div class="wave">
-                <div class="wave-grid"></div>
-                <div class="wave-region" style="left: 28%; right: 18%;"></div>
-                <svg class="wave-svg" viewBox="0 0 320 72" preserveAspectRatio="none" aria-hidden="true">
-                  <polyline fill="none" stroke="#EFE9DC" stroke-width="1" stroke-linejoin="round"
-                    points="0,36 8,32 16,40 24,28 32,42 40,30 48,38 56,24 64,44 72,18 80,46 88,22 96,40 104,16 112,48 120,12 128,50 136,8 144,52 152,10 160,46 168,20 176,42 184,26 192,38 200,28 208,40 216,30 224,36 232,32 240,38 248,34 256,40 264,30 272,42 280,28 288,38 296,34 304,40 312,32 320,36"/>
-                  <polyline fill="none" stroke="#B83A2A" stroke-width="1.5" stroke-linejoin="round"
-                    points="90,36 96,40 104,16 112,48 120,12 128,50 136,8 144,52 152,10 160,46 168,20 176,42 184,26 192,38 200,28 208,40 216,30 224,36 232,32 240,38 248,34 256,40"/>
-                </svg>
-                <div class="wave-axis">
-                  <span>00:00</span>
-                  <span>00:06</span>
-                  <span>00:12</span>
-                </div>
-              </div>
-              <dl class="evidence-list">
-                <div><dt>Source</dt><dd>youtube.com/watch?v=<span class="redact">7dF8m2qN1pK</span></dd></div>
-                <div><dt>Segment</dt><dd>11.3s · likely TTS clone</dd></div>
-                <div><dt>Confidence</dt><dd>87.2% (threshold 80%)</dd></div>
-                <div><dt>Captured</dt><dd data-evidence-date>2026-05-17 · 02:14 UTC</dd></div>
-              </dl>
-            </div>
-          </aside>
-        </section>
-
-        <section class="audience" aria-label="Built for">
-          <span class="audience-label">Built for</span>
-          <ul class="audience-list">
-            <li>Podcasters</li>
-            <li>Voice actors</li>
-            <li>YouTubers</li>
-            <li>Streamers</li>
-            <li>Journalists</li>
-            <li>Founder teams</li>
-          </ul>
-        </section>
-
-        <section id="method" class="section">
-          <div class="section-head">
-            <span>Method</span>
-            <h2>How it works.</h2>
-            <span>Four steps</span>
-          </div>
-          <div class="columns columns--four">
-            <article class="col">
-              <div class="col-num">01</div>
-              <h3>Verify.</h3>
-              <p>A few approved clips. We extract a fingerprint and discard the audio.</p>
-            </article>
-            <article class="col">
-              <div class="col-num">02</div>
-              <h3>Monitor.</h3>
-              <p>Public video, podcast, and creator platforms. Not "everything."</p>
-            </article>
-            <article class="col">
-              <div class="col-num">03</div>
-              <h3>Review.</h3>
-              <p>Source, time, confidence, context. You decide what's real.</p>
-            </article>
-            <article class="col">
-              <div class="col-num">04</div>
-              <h3>Report.</h3>
-              <p>Clean evidence for takedowns, appeals, and legal review.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="trust" class="section">
-          <div class="section-head">
-            <span>Trust</span>
-            <h2>How we hold your voice.</h2>
-            <span>Four principles</span>
-          </div>
-          <div class="trust-grid">
-            <article class="trust-card">
-              <h3>You enroll yourself.</h3>
-              <p>You upload your own reference clips. We never scrape your voice from the web to build your fingerprint.</p>
-            </article>
-            <article class="trust-card">
-              <h3>No raw audio stored.</h3>
-              <p>We extract a mathematical fingerprint and discard the audio. Fingerprints are encrypted and purge at 30 days unless you keep them active.</p>
-            </article>
-            <article class="trust-card">
-              <h3>Matches are leads.</h3>
-              <p>Every alert is yours to confirm or dismiss. The system never files a takedown on your behalf without explicit confirmation.</p>
-            </article>
-            <article class="trust-card">
-              <h3>You own the evidence.</h3>
-              <p>Each match exports as a packet — timestamped, source-linked, waveform-overlaid — ready for legal, platform appeals, or your agency.</p>
-            </article>
-          </div>
-        </section>
-
-        <section id="why-now" class="section">
-          <div class="section-head">
-            <span>Why now</span>
-            <h2>The case for watching.</h2>
-            <span>Three reasons</span>
-          </div>
-          <div class="reasons-grid">
-            <p class="reasons-lede">
-              If your voice is your work, a convincing clone is a business problem —
-              not a future one.
-            </p>
-            <ol class="reasons">
-              <li>
-                <span class="reason-num">01</span>
-                <div class="reason-body">
-                  <h3>You find out last.</h3>
-                  <p>Most creators learn their voice has been cloned from a listener or a fan — weeks after a clone is already in circulation.</p>
-                </div>
-              </li>
-              <li>
-                <span class="reason-num">02</span>
-                <div class="reason-body">
-                  <h3>Takedowns weren't built for audio.</h3>
-                  <p>Platform reporting flows were designed for text impersonation. Audio sits in a slower lane, and the clock runs while you wait.</p>
-                </div>
-              </li>
-              <li>
-                <span class="reason-num">03</span>
-                <div class="reason-body">
-                  <h3>Late detection is a brand event.</h3>
-                  <p>A clone in a scam, a fake endorsement, a fabricated interview — catching it in 24 hours is a different story than catching it in four weeks.</p>
-                </div>
-              </li>
-            </ol>
-          </div>
-        </section>
-
-        <section class="closer">
-          <p class="closer-eyebrow">You've read this far</p>
-          <h2 class="closer-heading">
-            Join the private waitlist.<br>
-            <em>Cohort 01 closes at 50.</em>
-          </h2>
-          <form class="signup signup--centered" id="waitlist-form-bottom">
-            <div class="signup-row">
-              <input id="email-bottom" name="email" type="email" placeholder="name@yourdomain.com" required>
-              <button type="submit">Join waitlist</button>
-            </div>
-            <p class="form-status" data-form-status role="status" aria-live="polite"></p>
-          </form>
-        </section>
-      </main>
-
-      <footer class="site-footer">
-        <span>VoiceThing · 2026</span>
-        <a data-feedback-email href="mailto:voicethingteam@gmail.com">voicethingteam@gmail.com</a>
-      </footer>
-    </div>
+          <p class="form-status" data-form-status role="status" aria-live="polite"></p>
+        </form>
+        </div>
+      </section>
+    </main>
   </body>
 </html>
